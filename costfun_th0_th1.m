@@ -4,7 +4,7 @@
 x=[1,2,4,3,5];
 y_act=[1,3,3,2,5];
 th00=0.2305:0.0001:0.2310;
-th11=0.79:0.0001:0.7905;
+th11=0.79:0.0001:0.7905;`
 
 h=repmat(reshape(th00,[1,1,size(th00,2)]),[size(th11,2),size(x,2),1])+repmat(th11'*x,[1,1,size(th00,2)]);
 y_act=repmat(y_act,[size(th11,2),1,size(th00,2)]);
@@ -25,5 +25,5 @@ th1_fin=th1(sum_h==min(min(sum_h)));
 subplot(1,2,2)
 scatter(x,y_act(1,:,1))
 hold on
-y=repmat(th0_fin,[1,size(x,2)])+(th1_fin*x)
+y=repmat(th0_fin,[1,size(x,2)])+(th1_fin*x);
 plot(x,y)
